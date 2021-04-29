@@ -1,7 +1,9 @@
 <div class="container">
   <h2>Todo App</h2>
   <div class="todo-search">
-    <input type="text" placeholder="Search todos">
+    <input type="text" placeholder="Search todos"
+           [(ngModel)]="todoTitle" (ngModelChange)="Search()"
+    >
     <div class="todo-button">
       <input type="checkbox" [ngClass]="{'active': filter === 'completed'}" (click)="filter='completed'">
       <p>Show completed todos</p>

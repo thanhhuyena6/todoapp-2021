@@ -29,6 +29,7 @@ export class TodosComponent implements OnInit {
   filter: string = '';
   date: Date;
 
+
   constructor() { }
 
   ngOnInit(): void {
@@ -72,6 +73,16 @@ export class TodosComponent implements OnInit {
     }
 
     return this.todos;
+  }
+
+  Search() : void {
+    if(this.todoTitle == "") {
+      this.ngOnInit();
+    } else {
+      this.todos = this.todos.filter(todo => {
+        return todo.title.toLocaleLowerCase().match(this.todoTitle.toLocaleLowerCase());
+      })
+    }
   }
 
 
