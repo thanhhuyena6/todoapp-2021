@@ -45,28 +45,32 @@
         margin-right: 10px;
       }
 
-      p {
-
-      }
     }
   }
 
   .todo-item {
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     input {
       width: 20px;
       height: 20px;
+       margin-right: 10px;
     }
 
-    .todo-item-label {
-      font-size: 25px;
-      font-weight: 600;
+    .todo-content {
+      width: 100%;
+      text-align: left;
+      .todo-item-label {
+        font-size: 25px;
+        font-weight: 600;
+      }
+      p {
+        margin: 0;
+        font-size: 16px;
+      }
     }
-
     .remove-item {
       font-size: 25px;
       width: 30px;
