@@ -27,6 +27,7 @@ export class TodosComponent implements OnInit {
   idForTodo: number = 0;
   beforeEditCache: string = '';
   filter: string = '';
+  date: Date;
 
   constructor() { }
 
@@ -35,6 +36,8 @@ export class TodosComponent implements OnInit {
     this.todoTitle = '';
     this.idForTodo = 0;
     this.filter = 'all';
+    this.date = new Date();
+    this.date.setDate(this.date.getDate());
   }
 
   addTodo(): void {
@@ -47,6 +50,7 @@ export class TodosComponent implements OnInit {
       title: this.todoTitle,
       completed: false,
       editing: false,
+      date : new Date(),
     })
     this.todoTitle = '';
     this.idForTodo++;
