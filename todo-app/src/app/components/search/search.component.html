@@ -1,0 +1,12 @@
+<div class="search">
+    <input
+      class="searchBox"
+      type="text"
+      placeholder="Search todos"
+      (keyup)="search($event)"
+    />
+    <div class="search__text">
+      <input type="checkbox" (click)="check($event)" />
+      <p>Show completed todos</p>
+    </div>
+</div>

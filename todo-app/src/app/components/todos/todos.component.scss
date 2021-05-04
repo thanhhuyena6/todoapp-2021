@@ -8,7 +8,7 @@
     font-size: 40px;
   }
 
-  .todo-search, .todo-input, .todo-item {
+  .todo-input, .todo-item {
     margin: auto;
     display: block;
     width: 50%;
@@ -20,7 +20,7 @@
     outline: none;
   }
 
-  .todo-search {
+  .search {
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;

@@ -28,6 +28,8 @@ export class TodosComponent implements OnInit {
   beforeEditCache: string = '';
   filter: string = '';
   date: Date;
+  searchTodo: string;
+  isChecked: boolean;
 
 
   constructor() { }
@@ -63,26 +65,18 @@ export class TodosComponent implements OnInit {
   }
 
 
-  todosFiltered(): Todo[] {
-    if (this.filter === 'all') {
-      return this.todos;
-    } else if (this.filter === 'active') {
-      return this.todos.filter(todo => !todo.completed);
-    } else if (this.filter === 'completed') {
-      return this.todos.filter(todo => todo.completed);
-    }
-
-    return this.todos;
+  toggleCompleted (index: number): void {
+    this.todos.map((todo,i ) => {
+      if (i == index) todo.completed = !todo.completed;
+      return todo;
+    });
   }
 
-  Search() : void {
-    if(this.todoTitle == "") {
-      this.ngOnInit();
-    } else {
-      this.todos = this.todos.filter(todo => {
-        return todo.title.toLocaleLowerCase().match(this.todoTitle.toLocaleLowerCase());
-      })
-    }
+  searchTodoEmit(event: any) {
+    this.searchTodo = event;
+  }
+  checkedEmit(event: any) {
+    this.isChecked = event;
   }
 
 
